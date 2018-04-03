@@ -1,5 +1,8 @@
 package com.messaging.payload;
 
+/**
+ * An Immutable class which represents some data to be processed in the system.
+ */
 public final class CustomerDetail {
 
     private final String accountId;
