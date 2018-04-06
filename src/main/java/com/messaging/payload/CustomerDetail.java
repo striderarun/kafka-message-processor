@@ -1,9 +1,14 @@
 package com.messaging.payload;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.io.Serializable;
+
 /**
  * An Immutable class which represents some data to be processed in the system.
  */
-public final class CustomerDetail {
+public final class CustomerDetail implements Serializable {
 
     private final String accountId;
     private final String firstName;
@@ -11,7 +16,12 @@ public final class CustomerDetail {
     private final String email;
     private final String phone;
 
-    public CustomerDetail(String accountId, String firstName, String lastName, String email, String phone) {
+    @JsonCreator
+    public CustomerDetail(@JsonProperty("accountId") String accountId,
+                          @JsonProperty("firstName") String firstName,
+                          @JsonProperty("lastName") String lastName,
+                          @JsonProperty("email") String email,
+                          @JsonProperty("phone") String phone) {
         this.accountId = accountId;
         this.firstName = firstName;
         this.lastName = lastName;
