@@ -8,7 +8,9 @@ import java.io.Serializable;
 /**
  * Immutable class representing a message and type.
  */
-public final class Message implements Serializable {
+public final class Message implements SerializableMessage {
+
+    private static final long serialVersionUID = 31L;
 
     private final byte[] message;
     private final MessageType type;
